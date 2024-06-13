@@ -1,0 +1,31 @@
+* {
+    box-sizing: border-box;
+    color: #333;
+  }
+body {
+    padding: 20px;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-div, .right-div {
+    width: 45%;
+    padding: 20px;
+    margin: 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+}
+.left-div {
+    margin-right: auto;
+    height: 100vh;
+}
+
+.right-div {
+    margin-left: auto;
+    height: 100vh;
+}
