@@ -2,15 +2,16 @@ import React, { useState, useRef } from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AllDetailsContext from "./AllDetailsContext";
-import BasicDetailsForm from "./BasicDetailsForm";
-import EducationDetailsForm from "./EducationDetailsForm";
-import TechnicalDetailsForm from "./TechDetails";
-import RenderDetails from "./TempDisplay";
-import WorkExperienceDetailsForm from "./WorkExperienceDetailsForm";
-import LeadershipDetailsForm from "./LeadershipDetailsForm";
-import ProjectDetailsForm from "./ProjectDetailsForm";
+import BasicDetailsForm from "./Components/BasicDetailsForm";
+import EducationDetailsForm from "./Components/EducationDetailsForm";
+import TechnicalDetailsForm from "./Components/TechDetails";
+// import RenderDetails from "./TempDisplay";
+import WorkExperienceDetailsForm from "./Components/WorkExperienceDetailsForm";
+import LeadershipDetailsForm from "./Components/LeadershipDetailsForm";
+import ProjectDetailsForm from "./Components/ProjectDetailsForm";
 import { useReactToPrint } from "react-to-print";
 import Display from "./Display";
+import NavigationBar from "./Components/NavigationBar";
 const App = () => {
   const allDetails = useState([]);
   const printRef = useRef(null); // Initialize useRef with null
@@ -28,10 +29,11 @@ const App = () => {
           <div className="left-div" ref={printRef}>
             {(allDetails[0] && Object.keys(allDetails[0]).length > 0 && (
               <Display />
-            )) || <RenderDetails />}
+            )) ||
+              null}
           </div>
           <div className="right-div">
-            {" "}
+            <NavigationBar />{" "}
             <Routes>
               <Route path="/" element={<BasicDetailsForm />} />
               <Route

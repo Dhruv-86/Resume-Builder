@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import AllDetailsContext from "./AllDetailsContext";
+import AllDetailsContext from "../AllDetailsContext";
 import { useNavigate } from "react-router-dom";
 
 const BasicDetailsForm = () => {
@@ -7,7 +7,9 @@ const BasicDetailsForm = () => {
   const navigate = useNavigate();
   return (
     <div className="form">
+      <h2>Basic Details</h2>
       <form
+        className="input"
         onSubmit={(e) => {
           e.preventDefault();
           const formData = new FormData(e.target);
@@ -26,30 +28,20 @@ const BasicDetailsForm = () => {
           navigate("/EducationDetailsForm");
         }}
       >
-        <label htmlFor="Name">
-          Name:-
-          <input id="name" placeholder="Name" name="name" />
-        </label>
+        <label htmlFor="Name">Name:- </label>
+        <input id="name" placeholder="Name" name="name" />
 
-        <label htmlFor="Address">
-          Address:-
-          <input id="address" placeholder="address" name="address" />
-        </label>
+        <label htmlFor="Address">Address:-</label>
+        <input id="address" placeholder="address" name="address" />
 
-        <label htmlFor="Phn">
-          Phone Number:-
-          <input id="phn" placeholder="phn" name="phn" />
-        </label>
+        <label htmlFor="Phn">Phone Number:-</label>
+        <input id="phn" placeholder="phn" name="phn" />
 
-        <label htmlFor="Email">
-          Email-Id:-
-          <input id="email" placeholder="email" name="email" />
-        </label>
+        <label htmlFor="Email">Email-Id:-</label>
+        <input id="email" placeholder="email" name="email" />
 
-        <label htmlFor="Link">
-          Links:-
-          <input id="link" placeholder="link" name="link" />
-        </label>
+        <label htmlFor="Link">Links:-</label>
+        <input id="link" placeholder="link" name="link" />
 
         <button>Submit</button>
       </form>

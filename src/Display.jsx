@@ -17,8 +17,8 @@ const DisplayEducationDetails = ({ educations }) => {
     <div>
       {" "}
       <h2>EDUCATION</h2>
-      {educations.map((education, index) => (
-        <div key={index}>
+      {educations.map((education) => (
+        <div key={education.id}>
           <h2>
             {education.school} | {education.degree}, {education.major} |{" "}
             {education.date} | GPA: {education.gpa}
@@ -33,16 +33,11 @@ const DisplayEducationDetails = ({ educations }) => {
 const DisplayTechDetails = ({ techs }) => {
   return (
     <div>
-      {" "}
       <h2>TECHNICAL SKILLS</h2>
-      {techs.map((tech, index) => (
-        <div key={index}>
-          {Object.entries(tech).map(([key, value]) => (
-            <div key={key}>
-              <h3>{key}:</h3>
-              <p>{value}</p>
-            </div>
-          ))}
+      {techs.map((tech) => (
+        <div key={tech.id}>
+          <h3>{tech.title}:</h3>
+          <p>{tech.skills}</p>
         </div>
       ))}
     </div>
@@ -54,8 +49,8 @@ const DisplayProjectDetails = ({ projects }) => {
     <div>
       {" "}
       <h2>ACADEMIC PROJECTS</h2>
-      {projects.map((project, index) => (
-        <div key={index}>
+      {projects.map((project) => (
+        <div key={projects.id}>
           <h2>
             {project.project} | {project.organization} | {project.date}
           </h2>
@@ -70,8 +65,8 @@ const DisplayWorkExperienceDetails = ({ experiences }) => {
   return (
     <div>
       <h2>Work Experience</h2>
-      {experiences.map((experience, index) => (
-        <div key={index}>
+      {experiences.map((experience) => (
+        <div key={experience.id}>
           <h2>
             {experience.company} | {experience.position} | {experience.date}
           </h2>
@@ -86,8 +81,8 @@ const DisplayLeadershipDetails = ({ leaderships }) => {
   return (
     <div>
       <h2>LEADERSHIP EXPERIENCE & ORGANIZATIONAL EXPERIENCE</h2>
-      {leaderships.map((leadership, index) => (
-        <div key={index}>
+      {leaderships.map((leadership) => (
+        <div key={leadership.id}>
           <h2>
             {leadership.eventName} | {leadership.organization} |{" "}
             {leadership.date}
